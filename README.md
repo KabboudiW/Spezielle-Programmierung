@@ -1,5 +1,4 @@
 # Spezielle-Programmierung
-# Spezielle-Programmierung
 Thema:BerlinAI - My City Talks. 
 
 1. Executive Summary – Kurze Zusammenfassung des Projekts.  
