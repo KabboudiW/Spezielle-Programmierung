@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: embedchat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: embedchat
+  template:
+    metadata:
+      labels:
+        app: embedchat
+    spec:
+      containers:
+        - name: embedchat
+          image: embed:latest
+          imagePullPolicy: Never 
+          envFrom:
+            - secretRef:
+                name: secret-openai
+            - configMapRef:
+                name: configmap-berlin
+          stdin: true
+          tty: true
+          command: ["bash","-lc","python Berlin-Agent.py"]
